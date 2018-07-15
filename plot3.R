@@ -9,6 +9,8 @@ plot3 <- function(dir) {
   raw_data <- read.table('household_power_consumption.txt', 
                          sep=";", header=T, na.strings="?")
   
+  raw_data <- raw_data[21000:600000, ]
+  
   setwd(current_dir)
   
   data_ <- subset(raw_data, !is.na(Sub_metering_1) & 
